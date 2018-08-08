@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8">
+    <html lang="en">
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+
+  <body>
+
+  <aside>
+    <div id="topbar">
+      <button id="menu-button" class="btn btn-secondary"> collapse</button>
+      <!-- <img id="menu-button" src="img/bars.svg" width="40px"> -->
+    </div>
+
+    <div id="menu-content">
+    <h4 class="title">Interesting Places in Marrakech</h4>
+    <br>
+      <div class="input-group">
+		    <input id="filter-text" class="form-control" data-bind="textInput: filterText">
+		    <div class="input-group-append">
+		      <button class="btn btn-outline-secondary"
+              type="button" data-bind="click: filter">
+            Filter
+          </button>
+          <button class="btn btn-outline-secondary"
+              type="button" data-bind="click: clearFilter">
+            Clear
+          </button>
+		    </div>
+		  </div>
+    <br>
+
+    <ul class="location-list" data-bind="foreach: locations">
+      <li class="list-item" data-bind="visible: visible">
+        <span data-bind="text: name"></span>
+        <span class="fav" data-bind="click: toggleFavourite, ifnot: favourite">&#x2605;</span>
+        <span class="fav true" data-bind="click: toggleFavourite, if: favourite">&#x2605;</span>
+
+      </li>
+    </ul>
+    </div>
+  </aside>
+
+  <main id="map">
+  </main>
+
+  <script src="lib/jquery-3.3.1.js"></script>
+  <script src="lib/knockout-3.4.2.js"></script>
+  <script src="js/locations.js"></script>
+  <script src="js/model/model.js"></script>
+  <script src="js/map.js"></script>
+  <script src="js/model/viewModel.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/map.js"></script>
+  <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=&v=3&callback=initMap">
+  </script>
+
+  </body>
+</html>

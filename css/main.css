@@ -1,0 +1,75 @@
+
+body {
+  box-sizing: border-box !important;
+}
+
+body {
+  height: 100%;
+}
+
+aside {
+  background-color: #343a40;
+  position: absolute;
+  left: 0;
+  width: 15%;
+  height:100%;
+}
+
+#menu-content {
+  padding-top: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+#map {
+  position: fixed !important;
+  left: 15%;
+  width: 85%;
+  height: 100%;
+}
+
+#topbar {
+  height: 50px;
+}
+
+#menu-button {
+  color: #fff;
+  padding-right: 1%;
+  float: right;
+}
+
+#menu-button:hover {
+  cursor: pointer;
+}
+
+.location-list {
+  padding-left: 0;
+}
+
+.list-item {
+  color: #fff;
+  list-style-type: none;
+  align: left;
+  border: 1px groove rgba(255,255,255,.75);
+  border-radius: 3px;
+  padding:0.2em;
+  padding-right: 1em;
+  margin-bottom: 1%;
+}
+
+.list-item:hover {
+  text-decoration: underline;
+}
+
+.title {
+  color: #fff;
+}
+
+.fav {
+  cursor: pointer;
+  float: right;
+}
+
+.true {
+  color: gold;
+}
