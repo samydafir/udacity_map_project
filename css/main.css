@@ -15,6 +15,13 @@ aside {
   height:100%;
 }
 
+aside.collapsed {
+  width: 50px;
+}
+
+.hidden {
+  display: none;
+}
 #menu-content {
   padding-top: 5%;
   padding-left: 5%;
@@ -28,13 +35,19 @@ aside {
   height: 100%;
 }
 
+#map.full{
+  left: 50px;
+  width: calc(100% - 50px);
+}
+
+
 #topbar {
   height: 50px;
 }
 
 #menu-button {
   color: #fff;
-  padding-right: 1%;
+  margin: 1%;
   float: right;
 }
 

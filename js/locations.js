@@ -20,7 +20,8 @@ var myLocations = [
   {
     id: 3,
     name: 'Koutoubia mosque',
-    description: 'Old mosque in marrakech',
+    description: 'Oldest mosque in marrakech, one of the oldest mosques in\
+      the islamic world',
     lat: 31.623664,
     lng: -7.993601,
     favourite: false,
@@ -41,8 +42,8 @@ var myLocations = [
     name: 'Boulevard Mohammed VI',
     description: 'grand boulevard with gardens and cafes where locals spend \
       their free time',
-    lat: 31.609169,
-    lng: -8.002246,
+    lat: 31.62301581,
+    lng: -8.01146474,
     favourite: false,
     visible: true
   },
@@ -58,11 +59,10 @@ var myLocations = [
   },
   {
     id: 7,
-    name: 'Gueliz',
-    description: 'Quarter in the new town, built in colonial times. Many \
-      restaurants, gardens and squares are located here.',
-    lat: 31.633654,
-    lng: -8.008899,
+    name:'Koutoubia garden',
+    description: 'Beautiful park behind the koutoubia mosque',
+    lat: 31.62295472,
+    lng: -7.99529763,
     favourite: false,
     visible: true
   },
@@ -77,7 +77,7 @@ var myLocations = [
   },
   {
     id: 9,
-    name: 'Authentic old town',
+    name: 'Marrakech inner city',
     description: 'The authentic old town. A place to experience the real \
       Marrakech. Away from the major tourist attractions one can enjoy a pot \
       of traditional peppermint tea.',
