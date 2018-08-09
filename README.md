@@ -39,4 +39,4 @@
   displayed in place of the image saying so.
 
 ## Disclaimner
-+ Used code-parts of previous projects implemented in this course
++ Used code-parts from previous projects implemented in this course
