@@ -1,3 +1,6 @@
+/**
+ * Default locations to show. Moved into separate file for clearness.
+ */
 var myLocations = [
   {
     id: 1,
@@ -10,7 +13,7 @@ var myLocations = [
   },
   {
     id: 2,
-    name: 'Jardins de Menara',
+    name: 'Menara garden',
     description: 'public garden / olive tree plantation',
     lat: 31.612479,
     lng: -8.021210,

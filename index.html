@@ -39,6 +39,9 @@
         <span class="fav true" data-bind="click: toggleFavourite, if: favourite">&#x2605;</span>
       </li>
     </ul>
+    <div class="sources">
+      Location info provided by wikipedia and flickr
+    </div>
     </div>
   </aside>
 
@@ -53,6 +56,7 @@
   <script src="js/model/viewModel.js"></script>
   <script src="js/utils.js"></script>
   <script src="js/map.js"></script>
+  <!-- Insert own API key here -->
   <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=&v=3&callback=initMap">
   </script>
