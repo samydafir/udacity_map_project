@@ -111,8 +111,8 @@ function createInfoContent(marker, infoWindow){
           windowContent = windowContent + "<br>" + result;
           infoWindow.setContent(windowContent);
         } else {
-          windowContent = windowContent + "<br><em>Unfortunately no wikipedia"+
-            "articles could be found for this loation</em>";
+          windowContent = windowContent + "<br><em>Unfortunately no" +
+          " wikipedia articles could be found for this loation</em>";
           infoWindow.setContent(windowContent);
         }
       }
@@ -122,24 +122,53 @@ function createInfoContent(marker, infoWindow){
      * returns image ids. On success a second ajax request is created
      * retrieving the actual photo url for the correct site which is then used
      * in the img tag.
+     * Error handling:
+     * - If no image is found for a given search string or an image_id cannot
+         be resolved to an actual image a message is included in the info
+         window saying so.
      */
+    var imagErrorText = "<br><br><em>Unfortunately no " +
+      " image could be found for the this location</em>";
     $.ajax({
       url: 'https://api.flickr.com/services/rest/?method=flickr.photos.search'+
         '&format=json&nojsoncallback=1&'+
         'api_key=e5ea7cc48b031fedcd226be09f950a3a&text=' + marker.title,
       success: function(response) {
-        var image_id = (response["photos"]["photo"][0]["id"]);
-        $.ajax({
-          url: ('https://api.flickr.com/services/rest/?'+
-            'method=flickr.photos.getSizes&format=json&nojsoncallback=1&'+
-            'api_key=e5ea7cc48b031fedcd226be09f950a3a&photo_id=' + image_id),
-          success: function(response){
-            var image_url = response["sizes"]["size"][3]["source"];
-            windowContent = windowContent + "<br><br><img src='" +
-              image_url +"'><br>";
-            infoWindow.setContent(windowContent);
-          }
-        });
+        var image_id = (response["photos"]["photo"]);
+        //check if any images found
+        if(image_id.length > 0) {
+          //second ajax call to get the actual images
+          $.ajax({
+            url: ('https://api.flickr.com/services/rest/?'+
+              'method=flickr.photos.getSizes&format=json&nojsoncallback=1&'+
+              'api_key=e5ea7cc48b031fedcd226be09f950a3a&photo_id='
+              + image_id[0]["id"]),
+            success: function(response){
+              //only status "ok" is accepted
+              if(response['stat'] === "ok") {
+                //insert the image into the infoWindow
+                var image_url = response["sizes"]["size"][3]["source"];
+                windowContent = windowContent + "<br><br><img src='" +
+                  image_url +"'><br>";
+                infoWindow.setContent(windowContent);
+              //handle different status codes
+              }else {
+                infoWindow.setContent(windowContent + " " + imagErrorText);
+              }
+            },
+            //handle ajax errors
+            error: function() {
+              infoWindow.setContent(windowContent + " " + imagErrorText);
+            }
+          });
+        //handle no images found
+        } else {
+          infoWindow.setContent(windowContent + " " + imagErrorText);
+        }
+      },
+      //handle ajax errors
+      error: function() {
+        infoWindow.setContent(windowContent + " " + imagErrorText);
       }
     });
 }

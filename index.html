@@ -1,12 +1,14 @@
 <!DOCTYPE html>
   <head>
-    <meta charset="utf-8">
     <html lang="en">
+    <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
   </head>
 
   <body>
@@ -34,9 +36,12 @@
 
     <ul class="location-list" data-bind="foreach: locations">
       <li class="list-item" data-bind="visible: visible">
-        <span data-bind="text: name, id: id, click: $parent.selectMarker"></span>
-        <span class="fav" data-bind="click: toggleFavourite, ifnot: favourite">&#x2605;</span>
-        <span class="fav true" data-bind="click: toggleFavourite, if: favourite">&#x2605;</span>
+        <span data-bind="text: name, id: id, click: $parent.selectMarker">
+        </span>
+        <span class="fav"
+          data-bind="click: toggleFavourite, ifnot: favourite">&#x2605;</span>
+        <span class="fav true"
+          data-bind="click: toggleFavourite, if: favourite">&#x2605;</span>
       </li>
     </ul>
     <div class="sources">
@@ -53,12 +58,13 @@
   <script src="js/locations.js"></script>
   <script src="js/model/model.js"></script>
   <script src="js/map.js"></script>
-  <script src="js/model/viewModel.js"></script>
+  <script src="js/viewmodel/viewModel.js"></script>
   <script src="js/utils.js"></script>
   <script src="js/map.js"></script>
   <!-- Insert own API key here -->
   <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=&v=3&callback=initMap">
+      src="https://maps.googleapis.com/maps/api/js?
+        key=AIzaSyDU3YTLOsqR-CGql-ZwFHKqPmQlqO82Q6o&v=3&callback=initMap">
   </script>
 
   </body>

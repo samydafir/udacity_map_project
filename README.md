@@ -29,11 +29,14 @@
   info window above the corresponding marker and adds a bounce animation to
   the marker.
 + Clicking the location or marker again removes the bounce effect.
-+ Info windows are closed by clicking the x icon in their top right corner
++ Info windows are closed by clicking the x icon in their top right corners
 + Info windows provide a link to a wikipedia page about the location. The link
-  is only included if an article can be found by the API.
-+ Info windows also contain a photo of the location. Photos are found using the
-  flickr API and also only included if a photo is found
+  is only included if an article can be found by the API. If no article is
+  found, a message is displayed instead of the link.
++ Info windows also contain a photo of the location. Photos are found using
+  the flickr API and also only included if a photo is found. If any API error
+  occurs in the AJAX request or an image cannot be found a message is
+  displayed in place of the image saying so.
 
 ## Disclaimner
 + Used code-parts of previous projects implemented in this course

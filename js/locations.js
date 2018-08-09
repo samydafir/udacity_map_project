@@ -71,7 +71,7 @@ var myLocations = [
   },
   {
     id: 8,
-    name: 'Jardin Majorelle',
+    name: 'Majorelle garden',
     description: 'Botanic garden containing many exotic plants and birds',
     lat: 31.641749,
     lng: -8.002832,
