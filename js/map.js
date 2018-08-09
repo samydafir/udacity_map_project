@@ -7,7 +7,8 @@ function initMap() {
   infoWindow = new google.maps.InfoWindow();
 
   map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 31.629472, lng: -7.981084}
+    center: {lat: 31.629472, lng: -7.981084},
+    mapTypeId: 'hybrid'
   });
 
   var bounds = new google.maps.LatLngBounds();
@@ -43,7 +44,6 @@ function toggleBounce(marker) {
 }
 
 function toggleInfoWindow(marker) {
-
     if (infoWindow.marker != marker) {
       infoWindow.marker = marker;
       createInfoContent(marker, infoWindow);
@@ -75,7 +75,9 @@ function createInfoContent(marker, infoWindow){
         if(article != ""){
           var result = '<a href="https://www.wikipedia.org/wiki/' + article + '">\
             https://www.wikipedia.org/wiki/' + article + '</a>';
-          infoWindow.setContent(windowContent + "<br>" + result);
+          windowContent = windowContent + "<br>" + result;
+          infoWindow.setContent(windowContent);
+
         }
       }
     });
@@ -88,7 +90,9 @@ function createInfoContent(marker, infoWindow){
           url: "https://api.flickr.com/services/rest/?method=flickr.photos.getSizes&format=json&nojsoncallback=1&api_key=e5ea7cc48b031fedcd226be09f950a3a&photo_id=" + image_id,
           success: function(response){
             var image_url = response["sizes"]["size"][3]["source"];
-            infoWindow.setContent(windowContent + "<br><br><img src='" + image_url +"'>");
+            windowContent = windowContent + "<br><br><img src='" +
+              image_url +"'><br>";
+            infoWindow.setContent(windowContent);
           }
         });
       }

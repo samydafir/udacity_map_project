@@ -5,6 +5,7 @@
     <title></title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
   </head>
 
@@ -12,30 +13,28 @@
 
   <aside>
     <div id="topbar">
-      <i class="fas fa-bars" id="menu-button"></i>
+      <i class="fas fa-bars fa-3x" id="menu-button"></i>
     </div>
 
     <div id="menu-content">
     <h4 class="title">Interesting Places in Marrakech</h4>
     <br>
-      <div class="input-group">
-		    <input id="filter-text" class="form-control" data-bind="textInput: filterText">
-		    <div class="input-group-append">
-		      <button class="btn btn-outline-secondary"
-              type="button" data-bind="click: filter">
-            Filter
-          </button>
-          <button class="btn btn-outline-secondary"
-              type="button" data-bind="click: clearFilter">
-            Clear
-          </button>
-		    </div>
-		  </div>
+		<input id="filter-text" class="form-control"
+      data-bind="textInput: filterText" placeholder="Filter places">
+		<button class="btn btn-secondary"
+      type="button" data-bind="click: filter">
+      Filter
+    </button>
+    <button class="btn btn-secondary"
+      type="button" data-bind="click: clearFilter">
+      Clear
+    </button>
+    <br>
     <br>
 
     <ul class="location-list" data-bind="foreach: locations">
       <li class="list-item" data-bind="visible: visible">
-        <span data-bind="text: name"></span>
+        <span data-bind="text: name, id: id, click: $parent.selectMarker"></span>
         <span class="fav" data-bind="click: toggleFavourite, ifnot: favourite">&#x2605;</span>
         <span class="fav true" data-bind="click: toggleFavourite, if: favourite">&#x2605;</span>
       </li>

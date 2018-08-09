@@ -10,7 +10,7 @@ var myLocations = [
   },
   {
     id: 2,
-    name: 'Menara gardens',
+    name: 'Jardins de Menara',
     description: 'public garden / olive tree plantation',
     lat: 31.612479,
     lng: -8.021210,
@@ -59,7 +59,7 @@ var myLocations = [
   },
   {
     id: 7,
-    name:'Koutoubia garden',
+    name:'Park Lalla Hasna',
     description: 'Beautiful park behind the koutoubia mosque',
     lat: 31.62295472,
     lng: -7.99529763,
@@ -83,6 +83,16 @@ var myLocations = [
       of traditional peppermint tea.',
     lat: 31.636601,
     lng: -7.986477,
+    favourite: false,
+    visible: true
+  },
+  {
+    id: 10,
+    name: 'Souk Semmarine',
+    description: 'Traditional moroccan souk. Offers a huge variety of\
+    artisanal products. Be careful not to get lost',
+    lat: 31.6278963,
+    lng: -7.98846973,
     favourite: false,
     visible: true
   }

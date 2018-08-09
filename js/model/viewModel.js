@@ -27,8 +27,13 @@ var viewModel = function() {
     markers.forEach(function(marker) {
       marker.setVisible(true);
     })
-
   };
+
+  this.selectMarker = function() {
+    toggleBounce(markers[$(this).attr("id")]);
+    toggleInfoWindow(markers[$(this).attr("id")]);
+  };
+
 };
 
 ko.applyBindings(new viewModel());

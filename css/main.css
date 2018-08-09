@@ -1,4 +1,6 @@
+/*css-document*/
 
+/*---- TAGS ----*/
 body {
   box-sizing: border-box !important;
 }
@@ -11,48 +13,51 @@ aside {
   background-color: #343a40;
   position: absolute;
   left: 0;
-  width: 15%;
-  height:100%;
+  width: 40%;
+  min-height:100%;
 }
 
 aside.collapsed {
   width: 50px;
+  padding-right: 3px;
+  padding-left: 4px;
+  margin: 0 auto;
 }
 
 .hidden {
   display: none;
 }
-#menu-content {
-  padding-top: 5%;
-  padding-left: 5%;
-  padding-right: 5%;
-}
 
-#map {
-  position: fixed !important;
-  left: 15%;
-  width: 85%;
-  height: 100%;
-}
+/**---- SIDEBAR TOP ----**/
 
-#map.full{
-  left: 50px;
-  width: calc(100% - 50px);
-}
-
-
-#topbar {
-  height: 50px;
+#filter-text {
+  margin-bottom: 1%;
 }
 
 #menu-button {
   color: #fff;
-  margin: 1%;
+  margin-right: 2%;
   float: right;
 }
 
 #menu-button:hover {
   cursor: pointer;
+  color: silver;
+}
+
+.title {
+  color: #fff;
+}
+
+#topbar {
+  height: 60px;
+}
+
+/**---- LOCATION LIST ----**/
+#menu-content {
+  padding-top: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
 .location-list {
@@ -68,14 +73,18 @@ aside.collapsed {
   padding:0.2em;
   padding-right: 1em;
   margin-bottom: 1%;
+  cursor: pointer;
+}
+
+.list-item:after {
+  content: " ";
+  display: block;
+  height: 0;
+  clear: both;
 }
 
 .list-item:hover {
-  text-decoration: underline;
-}
-
-.title {
-  color: #fff;
+  border: 2px inset #fff;
 }
 
 .fav {
@@ -85,4 +94,17 @@ aside.collapsed {
 
 .true {
   color: gold;
+}
+
+/**---- MAP ----**/
+#map {
+  position: fixed !important;
+  left: 40%;
+  width: 60%;
+  height: 100%;
+}
+
+#map.full{
+  left: 50px;
+  width: calc(100% - 50px);
 }
